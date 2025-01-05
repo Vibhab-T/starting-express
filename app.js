@@ -10,7 +10,7 @@ app.listen(3000);
 
 app.use(bodyParser.urlencoded());
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 app.use(userRoutes);
 
 app.use((req, res, next) => {

@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.use("/add-product", (req, res, next) => {
   res.send(
-    '<html><body><form action="/product" method="POST"><input type="text" name="productTitle"><button type="submit">Add Product</button></form></body></html>'
+    '<html><body><form action="/admin/product" method="POST"><input type="text" name="productTitle"><button type="submit">Add Product</button></form></body></html>'
   );
 });
 
@@ -15,7 +15,7 @@ router.use("/product-added", (req, res, next) => {
 //app.post or router.post is just app.use for post requests. similarly, app.get
 router.post("/product", (req, res, next) => {
   console.log(req.body);
-  res.redirect("/product-added");
+  res.redirect("/admin/product-added");
 });
 
 module.exports = router;
