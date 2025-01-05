@@ -11,5 +11,12 @@ app.listen(3000);
 app.use(bodyParser.urlencoded());
 
 app.use(adminRoutes);
-
 app.use(userRoutes);
+
+app.use((req, res, next) => {
+  res
+    .status(404)
+    .send(
+      "<hmtl><body><h1>ERROR 404:</h1><h2>Page Not Found!</h2></body></hmtl>"
+    );
+});

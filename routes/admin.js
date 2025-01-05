@@ -8,10 +8,14 @@ router.use("/add-product", (req, res, next) => {
   );
 });
 
+router.use("/product-added", (req, res, next) => {
+  res.send("<html><body><h1>PRODUCT ADDED</h1></body></html>");
+});
+
 //app.post or router.post is just app.use for post requests. similarly, app.get
 router.post("/product", (req, res, next) => {
   console.log(req.body);
-  res.redirect("/  ");
+  res.redirect("/product-added");
 });
 
 module.exports = router;
