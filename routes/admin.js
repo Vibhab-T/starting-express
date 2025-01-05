@@ -1,20 +1,18 @@
 const express = require("express");
+const path = require("path");
 
 const router = express.Router();
 
 router.use("/add-product", (req, res, next) => {
-  res.send(
-    '<html><body><form action="/admin/product" method="POST"><input type="text" name="productTitle"><button type="submit">Add Product</button></form></body></html>'
-  );
+  res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
 });
 
 router.use("/product-added", (req, res, next) => {
-  res.send("<html><body><h1>PRODUCT ADDED</h1></body></html>");
+  res.sendFile(path.join(__dirname, "../", "views", "product-added.html"));
 });
 
 //app.post or router.post is just app.use for post requests. similarly, app.get
 router.post("/product", (req, res, next) => {
-  console.log(req.body);
   res.redirect("/admin/product-added");
 });
 
