@@ -4,7 +4,10 @@ const dirName = require("../utility/path");
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+const adminData = require("./admin.js");
+
+router.use("/", (req, res, next) => {
+  console.log(adminData.products);
   res.sendFile(path.join(dirName, "views", "shop.html"));
 });
 
