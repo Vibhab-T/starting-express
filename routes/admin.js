@@ -4,11 +4,11 @@ const dirName = require("../utility/path");
 
 const router = express.Router();
 
-router.use("/add-product", (req, res, next) => {
+router.get("/add-product", (req, res, next) => {
   res.sendFile(path.join(dirName, "views", "add-product.html"));
 });
 
-router.use("/product-added", (req, res, next) => {
+router.get("/product-added", (req, res, next) => {
   res.sendFile(path.join(dirName, "views", "product-added.html"));
 });
 
