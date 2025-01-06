@@ -12,7 +12,7 @@ const app = express();
 // app.set("view engine", "handlebars");
 
 app.set("view engine", "pug"); //pug init
-app.set("views", "views");
+app.set("views", "./views");
 
 app.listen(3000);
 
