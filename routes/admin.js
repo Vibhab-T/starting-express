@@ -16,7 +16,7 @@ router.get("/product-added", (req, res, next) => {
 
 //app.post or router.post is just app.use for post requests. similarly, app.get
 router.post("/product", (req, res, next) => {
-  products.push({ title: req.body.productTitle });
+  products.push({ title: req.body.productTitle, price: req.body.productPrice });
   res.redirect("/admin/product-added");
 });
 

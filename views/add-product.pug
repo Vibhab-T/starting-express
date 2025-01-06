@@ -12,12 +12,14 @@ html(lang="en")
             nav.main-header-nav
                 ul.main-header-items-list
                     li.main-header-item 
-                        a.active(href="/") Shop 
+                        a(href="/") Shop 
                     li.main-header-item  
-                        a(href="/admin/add-product") Add Product 
+                        a.active(href="/admin/add-product") Add Product 
     main 
         form.product-form(action="/admin/product", method="POST")
             .form-control 
                 label(for = "productTitle") Product Title
                 input(type="text" name="productTitle" id="productTitle")
+                label(for="productPrice") Product Price 
+                input(type="text" name="productPrice" id="productPrice") 
             button.btn(type="submit") Add Product
