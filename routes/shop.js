@@ -6,7 +6,7 @@ const router = express.Router();
 
 const adminData = require("./admin.js");
 
-router.use("/", (req, res, next) => {
+router.get("/", (req, res, next) => {
   const products = adminData.products;
   res.render("shop", { prods: products, docTitle: "Shop" });
 });

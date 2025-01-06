@@ -7,16 +7,16 @@ const router = express.Router();
 const products = [];
 
 router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(dirName, "views", "add-product.html"));
+  res.render("add-product", { docTitle: "Add Product" });
 });
 
 router.get("/product-added", (req, res, next) => {
-  res.sendFile(path.join(dirName, "views", "product-added.html"));
+  res.render("product-added", { docTitle: "Product Added" });
 });
 
 //app.post or router.post is just app.use for post requests. similarly, app.get
 router.post("/product", (req, res, next) => {
-  products.push({ title: req.body.producTitle });
+  products.push({ title: req.body.productTitle });
   res.redirect("/admin/product-added");
 });
 
