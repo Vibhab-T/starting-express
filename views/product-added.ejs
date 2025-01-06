@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Product Added</title>
-		<link rel="stylesheet" href="/css/main.css" />
+<%- include('includes/head.ejs') %>
 	</head>
 	<body>
-		<header class="main-header">
-			<nav class="main-header-nav">
-				<ul class="main-header-items-list">
-					<li class="main-header-item">
-						<a href="/">Shop</a>
-					</li>
-					<li class="main-header-item">
-						<a href="/admin/add-product">Add Product</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+		<%- include('includes/nav.ejs') %>
 		<main>
 			<h1>PRODUCT ADDED!</h1>
-		</main>
-	</body>
-</html>
+            <%- include('includes/end.ejs') %>

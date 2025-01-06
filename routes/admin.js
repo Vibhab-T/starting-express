@@ -11,7 +11,7 @@ router.get("/add-product", (req, res, next) => {
 });
 
 router.get("/product-added", (req, res, next) => {
-  res.render("product-added", { docTitle: "Product Added" });
+  res.render("product-added", { docTitle: "Product Added", path: "productAdded" });
 });
 
 //app.post or router.post is just app.use for post requests. similarly, app.get

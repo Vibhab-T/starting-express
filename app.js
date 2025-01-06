@@ -24,5 +24,5 @@ app.use("/admin", adminData.routes);
 app.use(userRoutes);
 
 app.use((req, res, next) => {
-  res.status(404).render("error-404", { docTitle: "Error 404, Not Found" });
+  res.status(404).render("error-404", { docTitle: "Error 404, Not Found", path: "error404" });
 });
