@@ -1,7 +1,10 @@
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
-	res.render('add-product', { docTitle: 'Add Product', path: 'addProduct' });
+	res.render('admin/add-product', {
+		docTitle: 'Add Product',
+		path: 'addProduct',
+	});
 };
 
 exports.postProductAndRedirect = (req, res, next) => {
@@ -11,18 +14,42 @@ exports.postProductAndRedirect = (req, res, next) => {
 		req.body.productDescription
 	);
 	product.save();
-	res.redirect('/admin/product-added');
+	res.redirect('product-added');
 };
 
 exports.getProductAdded = (req, res, next) => {
-	res.render('product-added', {
+	res.render('admin/product-added', {
 		docTitle: 'Product Added',
 		path: 'productAdded',
 	});
 };
 
-exports.getProducts = (req, res, next) => {
+exports.getShop = (req, res, next) => {
 	Product.fetchAll((products) => {
-		res.render('shop', { prods: products, docTitle: 'Shop', path: 'shop' });
+		res.render('shop/index', {
+			prods: products,
+			docTitle: 'Shop',
+			path: 'shop',
+		});
+	});
+};
+
+exports.getProductsList = (req, res, next) => {
+	Product.fetchAll((products) => {
+		res.render('shop/products-list', {
+			prods: products,
+			docTitle: 'Product Lists',
+			path: 'productsList',
+		});
+	});
+};
+
+exports.getAdminProductsList = (req, res, next) => {
+	Product.fetchAll((products) => {
+		res.render('admin/products', {
+			prods: products,
+			docTitle: 'Admin Product Lists',
+			path: 'adminProduct',
+		});
 	});
 };

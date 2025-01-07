@@ -7,8 +7,10 @@ const router = express.Router();
 
 router.get('/add-product', productsController.getAddProduct);
 
-router.post('/product', productsController.postProductAndRedirect);
+router.post('/addProduct', productsController.postProductAndRedirect);
 
 router.get('/product-added', productsController.getProductAdded);
+
+router.get('/products', productsController.getAdminProductsList);
 
 module.exports = router;
