@@ -46,9 +46,7 @@ exports.getProductsList = (req, res, next) => {
 
 exports.getDetails = (req, res, next) => {
 	const prodId = req.params.productId;
-	Product.fetchById(prodId, (product) => {
-		console.log(product);
-	});
+	Product.fetchById(prodId, (product) => {});
 };
 
 exports.getAdminProductsList = (req, res, next) => {
